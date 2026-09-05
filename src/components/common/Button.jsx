@@ -1,11 +1,20 @@
 import React from 'react';
 
 const variants = {
-  primary: 'bg-brand-900 hover:bg-brand-800 text-white shadow-sm border border-transparent',
-  secondary: 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-sm',
-  accent: 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm',
-  ghost: 'bg-transparent hover:bg-slate-100 text-slate-600',
-  danger: 'bg-red-600 hover:bg-red-700 text-white'
+  primary:
+    'bg-[#ff6b00] hover:bg-[#ff8533] text-white shadow-lg shadow-orange-500/20 border border-transparent',
+
+  secondary:
+    'bg-[#141414] hover:bg-[#1f1f1f] text-gray-200 border border-white/10 shadow-sm',
+
+  accent:
+    'bg-orange-600 hover:bg-orange-500 text-white shadow-lg shadow-orange-500/20',
+
+  ghost:
+    'bg-transparent hover:bg-white/5 text-gray-400 hover:text-white',
+
+  danger:
+    'bg-red-600 hover:bg-red-500 text-white'
 };
 
 const sizes = {
@@ -27,7 +36,7 @@ export const Button = ({
   return (
     <button
       disabled={disabled || loading}
-      className={`inline-flex items-center justify-center gap-2 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-[#050505] disabled:opacity-50 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {loading ? (
@@ -35,6 +44,7 @@ export const Button = ({
       ) : Icon ? (
         <Icon className="w-4 h-4" />
       ) : null}
+
       {children}
     </button>
   );

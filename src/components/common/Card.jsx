@@ -1,10 +1,17 @@
 import React from 'react';
 
-export const Card = ({ children, className = '', hover = false, ...props }) => {
+export const Card = ({
+  children,
+  className = '',
+  hover = false,
+  ...props
+}) => {
   return (
     <div
-      className={`bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm ${
-        hover ? 'hover:shadow-md transition-shadow duration-200' : ''
+      className={`bg-[#141414] rounded-2xl border border-white/10 p-6 shadow-lg ${
+        hover
+          ? 'hover:border-orange-500/30 hover:shadow-orange-500/10 transition-all duration-200'
+          : ''
       } ${className}`}
       {...props}
     >
